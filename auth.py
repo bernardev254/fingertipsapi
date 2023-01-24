@@ -1,7 +1,7 @@
 from crypt import methods
 from flask import Blueprint, request, jsonify
 from werkzeug.security import check_password_hash, generate_password_hash
-from backend.database import User, db
+from database import User, db
 from flask_jwt_extended import create_access_token
 from flask_cors import cross_origin, CORS
 import requests

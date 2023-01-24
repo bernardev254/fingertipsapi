@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup as soup
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_cors import cross_origin, CORS
-from backend.database import Bookmark, db
+from database import Bookmark, db
 
 bookmarks = Blueprint("bookmarks", __name__, url_prefix='/api/v1/bookmarks')
 CORS(bookmarks, supports_credentials=True)
