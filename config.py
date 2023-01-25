@@ -12,7 +12,7 @@ class DevelopmentConfig(Config):
     JWT_SECRET_KEY = "JWT_SECRET_KEY"
     SQLALCHEMY_TRACK_MODIFICATIONS= False
     JWT_ACCESS_TOKEN_EXPIRES = False
-    SQLALCHEMY_ECHO= "True"
+    SQLALCHEMY_ECHO= True
 
 class TestingConfig(Config):
     DEBUG = True
