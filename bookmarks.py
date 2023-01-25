@@ -16,7 +16,9 @@ def getFavicon(domain):
     if 'http' not in domain:
         domain = 'http://' + domain
     page = requests.get(domain)
-    mysoup = soup(page.text, features="lxml")
+    #mysoup = soup(page.text, features="lxml")
+    mysoup = soup(page.text, features="html.parser")
+
     icon_link = mysoup.find("link", rel="shortcut icon")
     if icon_link is None:
         icon_link = mysoup.find("link", rel="icon")
