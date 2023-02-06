@@ -3,7 +3,7 @@
 
 - [Introduction](#introduction)
 - [Endpoints](#endpoints)
-- [Requests&ResponseFormat](#requests and response format)
+- [Requests&ResponseFormat](#requests&responseformat)
 - [Authentication](#authentication)
 - [Errorcodes](#errorcodes)
 - [Deployment](#deployment)
