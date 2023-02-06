@@ -3,9 +3,9 @@
 
 - [Introduction](#introduction)
 - [Endpoints](#endpoints)
-- [Requests and Response Format(#requests and response format)
+- ["Requests and Response Format"](#requests and response format)
 - [Authentication](#authentication)
-- [Error codes](#error codes)
+- [Errorcodes](#errorcodes)
 - [Deployment](#deployment)
 
 ## Introduction
