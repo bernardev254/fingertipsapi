@@ -122,8 +122,9 @@ configure environment variables
    MY_SECRET=""
    MY_JWT_SECRET=""
 ```
-```pip -r install requirements.txt
-   gunicorn app:app
+```
+pip -r install requirements.txt
+gunicorn app:app
 ```
 
 
