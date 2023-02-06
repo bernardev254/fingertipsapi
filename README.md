@@ -127,9 +127,9 @@ pip -r install requirements.txt
 gunicorn app:app
 ```
 
-####link to live site consuming the api
+###link to live site consuming the api
 ```
-https://fingertips-lite.onrender.com
+[live site](https://fingertips-lite.onrender.com)
 
 ```
 
