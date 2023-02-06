@@ -126,6 +126,12 @@ configure environment variables
 pip -r install requirements.txt
 gunicorn app:app
 ```
+```
+link to live site consuming the api
+{
+https://fingertips-lite.onrender.com
+}
+```
 
 
 
