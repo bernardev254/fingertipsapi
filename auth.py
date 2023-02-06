@@ -93,19 +93,4 @@ def proxy():
     response = requests.get(url)
     page = soup(response.text, "html.parser").prettify().replace('\n', " ")
     return jsonify(page), 200
-
-@auth.route("/proxyAuth",methods=["POST","OPTIONS"])
-@cross_origin(origins='*',methods=['POST','OPTIONS',])
-def proxyAuth():
-    url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
-    payload={}
-    headers = {
-        "Authorization": "Basic QXpzMktlalUxQVJ2SUw1SmRKc0FSYlYyZ0RyV21wT0I6aGlwR3ZGSmJPeHJpMzMwYw=="
-    }
-
-    response = requests.get(url, headers=headers, data=payload)
-    resp = response.json()
-    return jsonify(resp), 200
-
-
-
+    
