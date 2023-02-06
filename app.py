@@ -7,11 +7,14 @@ from database import db
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 from config import config_by_name
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 app = Flask(__name__, instance_relative_config=True)
 CORS(app, supports_credentials=True)
-app.config.from_object(config_by_name["dev"])
-
+app.config.from_object(config_by_name["prod"])
 with app.app_context():
     db.app = app
     db.init_app(app)
