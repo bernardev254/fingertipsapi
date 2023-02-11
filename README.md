@@ -130,7 +130,13 @@ gunicorn app:app
 ### link to live site consuming the api
 
 [live site](https://fingertips-lite.onrender.com)
+```
+ login credentials
+    email: test@gmail.com
+    password: testtest
 
+disclaimer: the site may be slow as it is host on a NON PREMIUM subscription
+```
 
 
 
