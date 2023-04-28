@@ -2,9 +2,9 @@ import pymysql
 
 # Create a connection object
 cnx = pymysql.connect(
-  host="ec2-3-88-168-48.compute-1.amazonaws.com",
-  user="ubuntu",
-  password="password",
+  host="ec2-3-231-39-248.compute-1.amazonaws.com",
+  password='password',
+  user="bernard",
   database="fingertips"
 )
 
@@ -12,10 +12,11 @@ cnx = pymysql.connect(
 cursor = cnx.cursor()
 
 # Execute a SQL query
-cursor.execute("SELECT * FROM my_table")
+cursor.execute("SHOW TABLES")
 
 # Fetch the results of the query
 results = cursor.fetchall()
+print(results)
 
 # Close the cursor and connection objects
 cursor.close()
