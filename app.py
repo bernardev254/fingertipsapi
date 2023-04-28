@@ -18,7 +18,7 @@ app.config.from_object(config_by_name["prod"])
 with app.app_context():
     db.app = app
     db.init_app(app)
-    db.create_all()
+    #db.create_all()
 
     JWTManager(app)
 
