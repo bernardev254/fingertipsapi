@@ -2,7 +2,7 @@ import pymysql
 
 # Create a connection object
 cnx = pymysql.connect(
-  host="ec2-3-231-39-248.compute-1.amazonaws.com",
+  host="ec2-44-202-114-75.compute-1.amazonaws.com",
   password='password',
   user="bernard",
   database="fingertips"
