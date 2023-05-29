@@ -99,7 +99,7 @@ def proxy():
     
 @auth.route("/render_page", methods=["POST", "OPTIONS"])
 @cross_origin(origins='*', methods=['POST', 'OPTIONS'])
-def proxy():
+def renderPage():
     data = request.get_json()
     url = data.get('url')
     response = requests.get(url)
