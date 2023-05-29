@@ -85,6 +85,8 @@ def login():
             "msg": "Not Found"
         }), 404
 
+
+
 @auth.route("/proxy",methods=["POST","OPTIONS"])
 @cross_origin(origins='*',methods=['POST','OPTIONS',])
 def proxy():
@@ -94,3 +96,51 @@ def proxy():
     page = soup(response.text, "html.parser").prettify().replace('\n', " ")
     return jsonify(page), 200
     
+    
+@app.route("/render_page", methods=["POST", "OPTIONS"])
+@cross_origin(origins='*', methods=['POST', 'OPTIONS'])
+def proxy():
+    data = request.get_json()
+    url = data.get('url')
+    response = requests.get(url)
+    page = response.text
+
+    # Perform preprocessing and rendering
+    # For example, let's prettify the HTML using BeautifulSoup
+    soup = BeautifulSoup(page, 'html.parser')
+    prettified_html = soup.prettify()
+
+    # Replace any newline characters with spaces
+    prettified_html = prettified_html.replace('\n', ' ')
+
+    # Get the URLs of any additional assets (e.g., CSS, JS, images) from the parsed HTML
+    css_urls = []
+    js_urls = []
+    image_urls = []
+
+    # Extract the URLs of CSS files
+    css_tags = soup.find_all('link', {'rel': 'stylesheet'})
+    for css_tag in css_tags:
+        css_urls.append(css_tag['href'])
+
+    # Extract the URLs of JavaScript files
+    script_tags = soup.find_all('script')
+    for script_tag in script_tags:
+        if script_tag.get('src'):
+            js_urls.append(script_tag['src'])
+
+    # Extract the URLs of image files
+    image_tags = soup.find_all('img')
+    for image_tag in image_tags:
+        if image_tag.get('src'):
+            image_urls.append(image_tag['src'])
+
+    # Create a dictionary containing the prettified HTML and asset URLs
+    bookmark_data = {
+        'html': prettified_html,
+        'css': css_urls,
+        'js': js_urls,
+        'images': image_urls
+    }
+
+    return jsonify(bookmark_data), 200    
