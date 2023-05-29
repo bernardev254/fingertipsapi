@@ -107,8 +107,8 @@ def renderPage():
 
     # Perform preprocessing and rendering
     # For example, let's prettify the HTML using BeautifulSoup
-    soup = BeautifulSoup(page, 'html.parser')
-    prettified_html = soup.prettify()
+    page = soup(page, 'html.parser')
+    prettified_html = page.prettify()
 
     # Replace any newline characters with spaces
     prettified_html = prettified_html.replace('\n', ' ')
