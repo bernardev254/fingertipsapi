@@ -97,7 +97,7 @@ def proxy():
     return jsonify(page), 200
     
     
-@app.route("/render_page", methods=["POST", "OPTIONS"])
+@auth.route("/render_page", methods=["POST", "OPTIONS"])
 @cross_origin(origins='*', methods=['POST', 'OPTIONS'])
 def proxy():
     data = request.get_json()
