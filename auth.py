@@ -121,7 +121,10 @@ def renderPage():
     # Extract the URLs of CSS files
     css_tags = pagesoup.find_all('link', {'rel': 'stylesheet'})
     for css_tag in css_tags:
-        css_urls.append(css_tag['href'])
+        href = css_tag.get('href')
+        if href:
+            css_urls.append(href)       
+            #css_urls.append(css_tag['href'])
 
     # Extract the URLs of JavaScript files
     script_tags = pagesoup.find_all('script')
