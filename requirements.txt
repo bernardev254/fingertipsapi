@@ -9,7 +9,7 @@ PyJWT==2.3.0
 requests==2.25.1
 six==1.16.0
 SQLAlchemy==1.4.39
-Werkzeug==2.0.2
+Werkzeug==3.0.3
 gunicorn==20.1.0
 bs4==0.0.1
 wheel==0.38.4
