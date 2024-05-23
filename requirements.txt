@@ -6,7 +6,7 @@ Flask-JWT-Extended==4.4.3
 Flask-SQLAlchemy==2.5.1
 itsdangerous==2.1.0
 PyJWT==2.3.0
-requests==2.25.1
+requests==2.32.0
 six==1.16.0
 SQLAlchemy==1.4.39
 Werkzeug==2.0.2
